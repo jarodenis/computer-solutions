@@ -1,0 +1,163 @@
+function replaceContent(target, source) {
+      document.getElementById(target).innerHTML = document.getElementById(source).innerHTML;
+   }
+
+function userlogin() {
+document.getElementById('light').style.display='block';
+document.getElementById('fade').style.display='block';
+}
+function userloginclose() {
+document.getElementById('light').style.display='none';
+document.getElementById('fade').style.display='none';
+}
+
+function userregister() {
+document.getElementById('light1').style.display='block';
+document.getElementById('fade1').style.display='block';
+}
+function userregisterclose() {
+document.getElementById('light1').style.display='none';
+document.getElementById('fade1').style.display='none';
+}
+
+function cleanFname() {
+document.getElementById("temp1").innerHTML="";
+}
+function cleanLname() {
+document.getElementById("temp2").innerHTML="";
+}
+function cleanEmail() {
+document.getElementById("temp3").innerHTML="";
+}
+function cleanConfemail() {
+document.getElementById("temp4").innerHTML="";
+}
+function cleanUname() {
+document.getElementById("temp5").innerHTML="";
+}
+function cleanPass() {
+document.getElementById("temp6").innerHTML="";
+}
+function cleanRepass() {
+document.getElementById("temp7").innerHTML="";
+}
+function cleanUser() {
+document.getElementById("temp8").innerHTML="";
+}
+function cleanUpass() {
+document.getElementById("temp9").innerHTML="";
+}
+
+
+function validateRegister() {
+var emailID = document.forms["register"].email.value;
+var  atposition = emailID.indexOf("@");
+var dotposition = emailID.lastIndexOf(".");
+   
+ if( document.forms["register"].fname.value == "" ){
+	 document.getElementById("temp1").innerHTML="<p style='color:red; font-style:bold; background-color:yellow'>Please enter first name!</p>";
+     return false;
+   }
+   if( document.forms["register"].lname.value == "" ){
+     document.getElementById("temp2").innerHTML="<p style='color:red; font-weight:bold; background-color:yellow'>Please enter last name!</p>";
+     return false;
+   }
+   if( document.forms["register"].email.value == "" ||
+   (atposition < 1 || ( dotposition - atposition < 2 ))) {
+     document.getElementById("temp3").innerHTML="<p style='color:red; font-weight:bold; background-color:yellow'>Please enter valid email!</p>";
+     return false;
+   }
+   if( document.forms["register"].email.value != document.forms["register"].confemail.value) {
+  document.getElementById("temp4").innerHTML="<p style='color:red; font-weight:bold; background-color:yellow'>Email address not the same!</p>";
+   return false;
+   }
+   if( document.forms["register"].uname.value == "") {
+  document.getElementById("temp5").innerHTML="<p style='color:red; font-weight:bold; background-color:yellow'>Please choose user name!</p>";
+   return false;
+   }
+   if( document.forms["register"].pass.value == "") {
+  document.getElementById("temp6").innerHTML="<p style='color:red; font-weight:bold; background-color:yellow'>Please choose password!</p>";
+   return false;
+   }
+   if( document.forms["register"].pass.value != document.forms["register"].repass.value) {
+   document.getElementById("temp7").innerHTML="<p style='color:red; font-weight:bold; background-color:yellow'>Password don't match!</p>";
+   return false;
+   }
+   return true;
+}
+
+function validateLogin() {
+if( document.forms["login"].uname.value == "") {
+document.getElementById("temp8").innerHTML="<p style='color:red; font-weight:bold; background-color:yellow'>Please enter user name!</p>";
+return false;
+}
+if( document.forms["login"].pass.value == "") {
+document.getElementById("temp9").innerHTML="<p style='color:red; font-weight:bold; background-color:yellow'>Please enter password!</p>";
+return false;
+}
+return true;
+}
+
+function validateContact() {
+var emailID = document.forms["contactform"].contemail.value;
+var  atposition = emailID.indexOf("@");
+var dotposition = emailID.lastIndexOf(".");
+
+if( document.forms["contactform"].contname.value == ""){
+	 document.getElementById("cname").innerHTML = "<p style='color:red; font-weight:bold; background-color:yellow'>Please enter name!</p>";
+     return false;
+   }
+   if( document.forms["contactform"].contemail.value == "" ||
+   (atposition < 1 || (dotposition - atposition < 2 ))) {
+   document.getElementById("cemail").innerHTML = "<p style='color:red; font-weight:bold; background-color:yellow'>Invalid email!</p>";
+   return false
+   }
+  if( document.forms["contactform"].message.value == ""){
+	 document.getElementById("cmessage").innerHTML = "<p style='color:red; font-weight:bold; background-color:yellow'>Please enter message!</p>";
+     return false;
+   } 
+  return true; 
+}
+
+function cleanName() {
+document.getElementById("cname").innerHTML="";
+}
+function cleanMail() {
+document.getElementById("cemail").innerHTML="";
+}
+function cleanMessage() {
+document.getElementById("cmessage").innerHTML="";
+}
+
+function changeSubmenu()
+{
+var w=window.outerWidth;
+if( w <= 778) {
+var elem = document.getElementById("submenu");
+elem.setAttribute("style","position:relative; z-index:100;");
+var style = elem.getAttribute("style");
+}
+if( w > 778) {
+var elem = document.getElementById("submenu");
+elem.setAttribute("style","position:absolute; z-index:100;");
+var style = elem.getAttribute("style");
+}
+}
+
+function external() {
+document.getElementById('light').style.display='block';
+document.getElementById('fade').style.display='block';
+}
+function externalclose() {
+document.getElementById('light').style.display='none';
+document.getElementById('fade').style.display='none';
+}
+
+function external1() {
+document.getElementById('light1').style.display='block';
+document.getElementById('fade1').style.display='block';
+}
+
+function opwind() {
+var myWindow = window.open("","","width=400,height=200");
+}
